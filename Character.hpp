@@ -1,14 +1,15 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AMateria.hpp                                       :+:      :+:    :+:   */
+/*   Character.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmimouni <hmimouni@>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/06 11:16:55 by hmimouni          #+#    #+#             */
-/*   Updated: 2026/01/19 16:37:48 by hmimouni         ###   ########.fr       */
+/*   Created: 2026/01/19 16:50:46 by hmimouni          #+#    #+#             */
+/*   Updated: 2026/01/19 16:51:51 by hmimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #pragma once
 #define red "\x1B[31m"
@@ -18,20 +19,17 @@
 #define yellow "\x1B[33m"
 #include <string.h>
 #include <iostream>
+#include "ICharacter.hpp"
 
-class AMateria
+class Character : public ICharacter
 {
-	protected:
-		std::string type;
-	public:
-		AMateria(std::string const &type);
-		virtual ~AMateria();
-		AMateria();
-		AMateria(const AMateria &target);
-        AMateria &operator=(const AMateria &other);
-		std::string const & getType() const; //Returns the materia type
-		virtual AMateria* clone() const = 0; // no
-		virtual void use(ICharacter& target);
+    std::string name;
+    AMateria* inventory[4];
+public:
+    Character(std::string const &name);
+    ~Character();
+    std::string const &getName() const override;
+    void equip(AMateria* m) override;
+    void unequip(int idx) override;
+    void use(int idx, ICharacter& target) override;
 };
-
-// new Ice(*this) ou new Cure(*this)

@@ -6,7 +6,7 @@
 /*   By: hmimouni <hmimouni@>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/19 15:02:10 by hmimouni          #+#    #+#             */
-/*   Updated: 2026/01/19 16:22:07 by hmimouni         ###   ########.fr       */
+/*   Updated: 2026/01/19 16:42:25 by hmimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 AMateria::AMateria(std::string const &type)
 {
-	
+	this->type = type;
 }
 AMateria::~AMateria()
 {
@@ -30,7 +30,7 @@ AMateria::AMateria(const AMateria &target)
 	if(this != &target)
 	*this = target;
 };
-AMateria::AMateria &operator=(const AMateria &other)
+AMateria &AMateria ::operator=(const AMateria &other)
 {
 	if(this != &other)
 	this->type = other.type;
@@ -39,10 +39,10 @@ AMateria::AMateria &operator=(const AMateria &other)
 //-------------------- Action ---------------------
 void AMateria::use(ICharacter& target)
 {
-	
+	(void)target;
 };
 
-AMateria::AMateria* clone() const
+std::string const &AMateria::getType() const
 {
-	
+	return type;
 }
