@@ -6,7 +6,7 @@
 /*   By: hmimouni <hmimouni@>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/19 15:26:28 by hmimouni          #+#    #+#             */
-/*   Updated: 2026/01/19 16:10:06 by hmimouni         ###   ########.fr       */
+/*   Updated: 2026/01/21 15:33:42 by hmimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,5 +42,5 @@ AMateria* Cure::clone() const
 
 void Cure ::use(ICharacter& target)
 {
-	std::cout << "* heals  " << target << "’s wounds *\n"; 
+	std::cout << "* heals  " <<  target.getName() << "’s wounds *\n"; 
 }

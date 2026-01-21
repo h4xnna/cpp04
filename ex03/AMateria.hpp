@@ -6,7 +6,7 @@
 /*   By: hmimouni <hmimouni@>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 11:16:55 by hmimouni          #+#    #+#             */
-/*   Updated: 2026/01/19 16:37:48 by hmimouni         ###   ########.fr       */
+/*   Updated: 2026/01/21 15:17:51 by hmimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 #define yellow "\x1B[33m"
 #include <string.h>
 #include <iostream>
+#include " ICharacter.hpp"
 
 class AMateria
 {
@@ -30,8 +31,7 @@ class AMateria
 		AMateria(const AMateria &target);
         AMateria &operator=(const AMateria &other);
 		std::string const & getType() const; //Returns the materia type
-		virtual AMateria* clone() const = 0; // no
+		virtual AMateria* clone() const = 0; // Class abstraite, jamais créer directement une AMateria.
 		virtual void use(ICharacter& target);
 };
 
-// new Ice(*this) ou new Cure(*this)

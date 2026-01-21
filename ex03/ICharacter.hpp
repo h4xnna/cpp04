@@ -6,7 +6,7 @@
 /*   By: hmimouni <hmimouni@>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/19 15:06:22 by hmimouni          #+#    #+#             */
-/*   Updated: 2026/01/19 16:44:58 by hmimouni         ###   ########.fr       */
+/*   Updated: 2026/01/21 15:01:43 by hmimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,16 +22,12 @@
 
 class ICharacter
 {
-	private:
-		int invotary[4];
 	public:
 		virtual ~ICharacter() {}
-		ICharacter();
-		ICharacter(std::string const &type);
-		ICharacter(const ICharacter &target);
-        ICharacter &operator=(const ICharacter &other);
 		virtual std::string const & getName() const = 0;
 		virtual void equip(AMateria* m) = 0;
 		virtual void unequip(int idx) = 0;
 		virtual void use(int idx, ICharacter& target) = 0;
 };
+// Only pure virtual functions
+// No attributes

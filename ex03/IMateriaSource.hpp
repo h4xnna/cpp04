@@ -6,7 +6,7 @@
 /*   By: hmimouni <hmimouni@>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/19 15:08:38 by hmimouni          #+#    #+#             */
-/*   Updated: 2026/01/19 15:19:15 by hmimouni         ###   ########.fr       */
+/*   Updated: 2026/01/21 14:27:07 by hmimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 #define yellow "\x1B[33m"
 #include <string.h>
 #include <iostream>
+#include "AMateria.hpp"
 
 class IMateriaSource
 {

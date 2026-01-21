@@ -6,9 +6,16 @@
 /*   By: hmimouni <hmimouni@>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 11:16:36 by hmimouni          #+#    #+#             */
-/*   Updated: 2026/01/06 11:16:52 by hmimouni         ###   ########.fr       */
+/*   Updated: 2026/01/21 15:20:49 by hmimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+
+#include "AMateria.hpp"
+#include "ICharacter.hpp"
+#include "Cure.hpp"
+#include "MateriaSource.hpp"
+
 
 int main()
 {
