@@ -6,7 +6,7 @@
 /*   By: hmimouni <hmimouni@>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 11:16:55 by hmimouni          #+#    #+#             */
-/*   Updated: 2026/01/21 15:17:51 by hmimouni         ###   ########.fr       */
+/*   Updated: 2026/01/23 15:03:01 by hmimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 #define yellow "\x1B[33m"
 #include <string.h>
 #include <iostream>
-#include " ICharacter.hpp"
+#include "ICharacter.hpp"
 
 class AMateria
 {

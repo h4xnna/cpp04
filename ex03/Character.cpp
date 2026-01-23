@@ -6,12 +6,16 @@
 /*   By: hmimouni <hmimouni@>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/19 16:50:41 by hmimouni          #+#    #+#             */
-/*   Updated: 2026/01/21 15:55:48 by hmimouni         ###   ########.fr       */
+/*   Updated: 2026/01/23 15:07:16 by hmimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ICharacter.hpp"
+#include "Character.hpp"
 
+std::string const & Character::getName() const
+{
+   return(this->_name);
+}
 Character:: Character(std::string const &name)
 {
 	int i =0;
@@ -35,7 +39,7 @@ Character:: ~Character()
 Character:: Character(const Character& other)
 {
 	int i =0;
-	_name.getName() = other.name;
+	_name.getName() = other._name;
 	while(i < 4)
 	{
 		if(other.inventory[i])
@@ -43,10 +47,6 @@ Character:: Character(const Character& other)
 		else 
 			inventory[i] = NULL;
 	}
-}
- std::string const & Character::getName() const
-{
-	return(this->_name);
 }
 void Character:: equip(AMateria* m)
 {
