@@ -6,7 +6,7 @@
 /*   By: hmimouni <hmimouni@>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/21 14:39:49 by hmimouni          #+#    #+#             */
-/*   Updated: 2026/01/23 16:31:26 by hmimouni         ###   ########.fr       */
+/*   Updated: 2026/01/23 16:59:16 by hmimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,12 +33,14 @@ MateriaSource::~MateriaSource()
 	}
 }
 //------ Actions  ---------------
-void MateriaSource::learnMateria(AMateria* m) /////////////// non
+
+void MateriaSource::learnMateria(AMateria* m)
 {
+	int i =0;
 	if (!m)
 		return;
 
-	for (int i = 0; i < 4; i++)
+	while (i < 4)
 	{
 		if (inventory[i] == NULL)
 		{
