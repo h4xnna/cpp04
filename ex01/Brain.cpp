@@ -6,7 +6,7 @@
 /*   By: hmimouni <hmimouni@>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 10:16:12 by hmimouni          #+#    #+#             */
-/*   Updated: 2026/01/06 10:16:13 by hmimouni         ###   ########.fr       */
+/*   Updated: 2026/01/23 14:58:43 by hmimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 Brain::Brain()
 {
-    std::cout << "Defaul constructor Brain called\n";
+    std::cout << "Default constructor Brain called\n";
 }
 
 Brain::~Brain()

@@ -6,7 +6,7 @@
 /*   By: hmimouni <hmimouni@>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 10:16:41 by hmimouni          #+#    #+#             */
-/*   Updated: 2026/01/06 10:16:42 by hmimouni         ###   ########.fr       */
+/*   Updated: 2026/01/23 14:59:59 by hmimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
     int    main(void)
 {
-    const int arraySize = 3;
+    const int arraySize = 6;
     const Animal *animals[arraySize];
 
     for (int i = 0; i < arraySize; i++)
@@ -49,10 +49,6 @@
     {
         delete animals[i];
     }
-
-    Cat cat1;
-    Cat cat2;
-
 
     return (0);
 }
