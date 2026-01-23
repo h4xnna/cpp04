@@ -6,45 +6,78 @@
 /*   By: hmimouni <hmimouni@>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/21 14:39:49 by hmimouni          #+#    #+#             */
-/*   Updated: 2026/01/21 15:17:16 by hmimouni         ###   ########.fr       */
+/*   Updated: 2026/01/23 16:31:26 by hmimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include "MateriaSource.hpp"
 
-void learnMateria(AMateria*)
+MateriaSource::MateriaSource()
 {
-	inventory[i] = 
-	
+	int i = 0;
+	while ( i < 4)
+	{
+		inventory[i] = NULL;
+		i++;	
+	}
+}
+
+MateriaSource::~MateriaSource()
+{
+	int i = 0;
+	while ( i < 4)
+	{
+		delete inventory[i];
+		i++;
+	}
+}
+//------ Actions  ---------------
+void MateriaSource::learnMateria(AMateria* m) /////////////// non
+{
+	if (!m)
+		return;
+
+	for (int i = 0; i < 4; i++)
+	{
+		if (inventory[i] == NULL)
+		{
+			inventory[i] = m->clone();
+			return;
+		}
+	}
 }
 
 
-void print_inventory()
+
+void MateriaSource::print_inventory()
 {
 	int i = 0;
-	while(inventory[i])
+	while(i < 4)
 	{
-		std::cout << "inventory["<< i<< "] = "<< inventory[i] << std:endl;
+		if(inventory[i])
+			std::cout << "inventory["<< i<< "] = "<< inventory[i]->getType() << std::endl;
+		else 
+			std::cout << "inventory["<< i<< "] = empty "<< std::endl;
+		i++;
 	} 
 }
-AMateria* createMateria(std::string const & type)
+AMateria* MateriaSource::createMateria(std::string const & type)
 {
 	int i = 0;
-	while(inventory)
+	while(i < 4)
 	{
-		if(inventory[i] = type)
-			return;
-		else if(inventory == NULL)
+		if(inventory[i] && inventory[i]->getType() == type)
 		{
-			inventory[i] = type; 
-			break;
-		}
-		else if(i > 4)
-		{
-			std::cout << "inventory is full"<< std::endl;
+			return inventory[i]->clone();
+			
 		}
 		i++;
 	}
+	if(i >= 4)
+	{
+			std::cout << red << "inventory is full"<< std::endl;
+	}
 	print_inventory();
+	return 0;
 }

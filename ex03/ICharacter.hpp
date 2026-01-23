@@ -6,7 +6,7 @@
 /*   By: hmimouni <hmimouni@>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/19 15:06:22 by hmimouni          #+#    #+#             */
-/*   Updated: 2026/01/21 15:01:43 by hmimouni         ###   ########.fr       */
+/*   Updated: 2026/01/23 16:49:59 by hmimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@
 #define yellow "\x1B[33m"
 #include <string>
 #include <iostream>
-#include "AMateria.hpp"
+
+class AMateria;
 
 class ICharacter
 {
@@ -28,6 +29,7 @@ class ICharacter
 		virtual void equip(AMateria* m) = 0;
 		virtual void unequip(int idx) = 0;
 		virtual void use(int idx, ICharacter& target) = 0;
+		//virtual AMateria* getMateria(int idx) const = 0;
 };
 // Only pure virtual functions
 // No attributes

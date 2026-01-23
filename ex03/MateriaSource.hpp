@@ -6,7 +6,7 @@
 /*   By: hmimouni <hmimouni@>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/21 14:32:11 by hmimouni          #+#    #+#             */
-/*   Updated: 2026/01/23 15:03:52 by hmimouni         ###   ########.fr       */
+/*   Updated: 2026/01/23 16:22:53 by hmimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ class MateriaSource : public IMateriaSource
 		MateriaSource(const MateriaSource& other);
 		MateriaSource& operator=(const MateriaSource& other);
 		~MateriaSource();
-
+		void print_inventory();
 		void learnMateria(AMateria*);
 		AMateria* createMateria(std::string const & type);
 };

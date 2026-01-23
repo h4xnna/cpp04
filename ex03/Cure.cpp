@@ -6,7 +6,7 @@
 /*   By: hmimouni <hmimouni@>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/19 15:26:28 by hmimouni          #+#    #+#             */
-/*   Updated: 2026/01/21 15:33:42 by hmimouni         ###   ########.fr       */
+/*   Updated: 2026/01/23 16:53:14 by hmimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 Cure:: ~Cure()
 {
-	
+	std::cout << "Default destructor Cure called\n";
 }
 Cure::Cure() : AMateria("cure")
 {

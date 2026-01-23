@@ -6,7 +6,7 @@
 /*   By: hmimouni <hmimouni@>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/19 16:50:46 by hmimouni          #+#    #+#             */
-/*   Updated: 2026/01/21 15:53:22 by hmimouni         ###   ########.fr       */
+/*   Updated: 2026/01/23 16:47:25 by hmimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,15 @@
 class Character : public ICharacter
 {
     private:
-		    AMateria * inventory[4];
+		AMateria * inventory[4];
         std::string _name;
     public:
         Character(std::string const &name);
+        Character();
         ~Character();
         Character &operator=(const Character &other);
         Character(const Character& other);
+        AMateria* getMateria(int idx) const;
         std::string const &getName() const;
         void equip(AMateria* m);
         void unequip(int idx);
