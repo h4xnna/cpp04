@@ -6,7 +6,7 @@
 /*   By: hmimouni <hmimouni@>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 10:17:02 by hmimouni          #+#    #+#             */
-/*   Updated: 2026/01/06 10:17:03 by hmimouni         ###   ########.fr       */
+/*   Updated: 2026/01/21 15:38:03 by hmimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 Cat::Cat()
 {
-    std::cout << "Defaul constructor Cat called\n";
+    std::cout << "Default constructor Cat called\n";
 	brain = new Brain();
     type = "Cat";
 }

@@ -6,7 +6,7 @@
 /*   By: hmimouni <hmimouni@>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 10:15:19 by hmimouni          #+#    #+#             */
-/*   Updated: 2026/01/06 10:15:20 by hmimouni         ###   ########.fr       */
+/*   Updated: 2026/01/23 14:50:02 by hmimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 Cat::Cat()
 {
-    type = "Cat";
-    std::cout << "Defaul constructor Cat called\n";
+    type = " Cat";
+    std::cout << "Default constructor Cat called\n";
 
 }
 

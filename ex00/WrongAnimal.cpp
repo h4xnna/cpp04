@@ -6,7 +6,7 @@
 /*   By: hmimouni <hmimouni@>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 10:15:42 by hmimouni          #+#    #+#             */
-/*   Updated: 2026/01/06 10:15:43 by hmimouni         ###   ########.fr       */
+/*   Updated: 2026/01/23 14:49:42 by hmimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ WrongAnimal::WrongAnimal()
 
 void  WrongAnimal::makeSound() const
 {
-    std::cout << type << " RROOH ROOH" << std::endl;
+    std::cout << type << " WRRROOONNNNGGGGG" << std::endl;
 }
 
 const std::string &WrongAnimal::getType() const
