@@ -6,7 +6,7 @@
 /*   By: hmimouni <hmimouni@>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/19 16:50:41 by hmimouni          #+#    #+#             */
-/*   Updated: 2026/01/23 16:50:08 by hmimouni         ###   ########.fr       */
+/*   Updated: 2026/01/24 13:25:47 by hmimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,8 +106,9 @@ void Character::use(int idx, ICharacter& target)
         inventory[idx]->use(target);
 }
 
-// AMateria* Character::getMateria(int idx) const {
-//     if (idx < 0 || idx > 3) 
-// 		return NULL;
-//     return inventory[idx];
-// }
+AMateria* Character::getMateria(int idx) const 
+{
+    if (idx < 0 || idx > 3) 
+		return NULL;
+    return inventory[idx];
+}

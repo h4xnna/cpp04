@@ -6,7 +6,7 @@
 /*   By: hmimouni <hmimouni@>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 11:16:36 by hmimouni          #+#    #+#             */
-/*   Updated: 2026/01/23 16:50:18 by hmimouni         ###   ########.fr       */
+/*   Updated: 2026/01/24 13:25:31 by hmimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,49 +43,77 @@
 // }
 
 
-// void print_inventory(ICharacter* character) {
-//     std::cout << BOLD << yellow << character->getName() << "'s inventory:" << reset << std::endl;
-//     for (int i = 0; i < 4; ++i) {
-//         AMateria* mat = character->getMateria(i); // ou équivalent selon ton code
-//         if (mat)
-//             std::cout << "Slot " << i << ": " << mat->getType() << std::endl;
-//         else
-//             std::cout << "Slot " << i << ": empty" << std::endl;
-//     }
-// }
+void print_inventory(ICharacter* character) 
+{
+    int i = 0;
+    std::cout << BOLD << yellow << character->getName() << "'s inventory:" << reset << std::endl;
+    while ( i < 4) 
+    {
+        AMateria* mat = character->getMateria(i);
+        if (mat)
+            std::cout << "Slot " << i << ": " << mat->getType() << std::endl;
+        else
+            std::cout << "Slot " << i << ": empty" << std::endl;
+        i++;
+    }
+}
 
 
 int main()
 {
-    std::cout << green << "--- Création de la source de materia ---" << reset << std::endl;
+    std::cout << green << "\n=== SETUP SOURCE ===" << reset << std::endl;
     IMateriaSource* src = new MateriaSource();
     src->learnMateria(new Ice());
     src->learnMateria(new Cure());
 
-    std::cout << green << "--- Création du personnage 'me' ---" << reset << std::endl;
+    std::cout << green << "\n=== CREATE CHARACTER ME ===" << reset << std::endl;
     ICharacter* me = new Character("me");
 
-    std::cout << green << "--- Création et équipement des materias ---" << reset << std::endl;
-    AMateria* tmp;
-    tmp = src->createMateria("ice");
-    if (tmp) me->equip(tmp);
+    std::cout << green << "\n=== FILL INVENTORY (4 slots) ===" << reset << std::endl;
+    me->equip(src->createMateria("ice"));   
+    me->equip(src->createMateria("cure"));  
+    me->equip(src->createMateria("ice"));   
+    me->equip(src->createMateria("cure"));  
+    
+    std::cout << yellow << "\n--- Inventory after fill ---" << reset << std::endl;
+    print_inventory(me);
 
-    tmp = src->createMateria("cure");
-    if (tmp) me->equip(tmp);
+    std::cout << green << "\n=== TRY OVERFILL (should do nothing) ===" << reset << std::endl;
+    me->equip(src->createMateria("ice"));
+    print_inventory(me);
 
-    std::cout << green << "--- Création du personnage 'bob' ---" << reset << std::endl;
+    std::cout << green << "\n=== UNEQUIP SLOTS 1 & 3 ===" << reset << std::endl;
+    me->unequip(1);
+    me->unequip(3);
+    print_inventory(me);
+
+    std::cout << green << "\n=== RE-EQUIP AFTER UNEQUIP ===" << reset << std::endl;
+    me->equip(src->createMateria("cure")); 
+    me->equip(src->createMateria("ice"));  
+    print_inventory(me);
+
+    std::cout << green << "\n=== CREATE BOB ===" << reset << std::endl;
     ICharacter* bob = new Character("bob");
 
-    std::cout << green << "--- Utilisation des materias ---" << reset << std::endl;
-    me->use(0, *bob);
-    me->use(1, *bob);
-	//print_inventory(me);
+    std::cout << green << "\n=== USE ALL SLOTS ===" << reset << std::endl;
+    for (int i = 0; i < 4; i++)
+        me->use(i, *bob);
 
-    std::cout << green << "--- Nettoyage de la mémoire ---"<< reset << std::endl;
+    std::cout << green << "\n=== UNEQUIP EVERYTHING ===" << reset << std::endl;
+    for (int i = 0; i < 4; i++)
+        me->unequip(i);
+    print_inventory(me);
+
+    std::cout << green << "\n=== USE EMPTY INVENTORY (no crash) ===" << reset << std::endl;
+    for (int i = 0; i < 4; i++)
+        me->use(i, *bob);
+
+    std::cout << green << "\n=== CLEANUP ===" << reset << std::endl;
     delete bob;
     delete me;
     delete src;
 
-    std::cout <<red <<  "--- Fin du programme ---" << reset << std::endl;
+    std::cout << red << "\n=== END PROGRAM ===" << reset << std::endl;
     return 0;
 }
+

@@ -6,7 +6,7 @@
 /*   By: hmimouni <hmimouni@>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/21 14:32:11 by hmimouni          #+#    #+#             */
-/*   Updated: 2026/01/23 16:22:53 by hmimouni         ###   ########.fr       */
+/*   Updated: 2026/01/24 12:54:31 by hmimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ class MateriaSource : public IMateriaSource
 {
 	private:
 		AMateria* inventory[4];
+		int _count;
 
 		public:
 		MateriaSource();
