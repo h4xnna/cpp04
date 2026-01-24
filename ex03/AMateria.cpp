@@ -6,7 +6,7 @@
 /*   By: hmimouni <hmimouni@>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/19 15:02:10 by hmimouni          #+#    #+#             */
-/*   Updated: 2026/01/19 16:42:25 by hmimouni         ###   ########.fr       */
+/*   Updated: 2026/01/24 15:08:36 by hmimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,16 @@
 
 AMateria::AMateria(std::string const &type)
 {
+	std::cout << "Parametized constructor AMateria called \n";
 	this->type = type;
 }
 AMateria::~AMateria()
 {
-	
+	std::cout << "Default destructor AMateria called \n";
 };
 AMateria::AMateria()
 {
+	std::cout << "Default constructor AMateria called \n";
 	type = "AMateria";
 };
 AMateria::AMateria(const AMateria &target)
@@ -32,6 +34,7 @@ AMateria::AMateria(const AMateria &target)
 };
 AMateria &AMateria ::operator=(const AMateria &other)
 {
+	std::cout << "Copy assignment operator AMateria called\n";
 	if(this != &other)
 	this->type = other.type;
 	return(*this);

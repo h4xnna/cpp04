@@ -6,7 +6,7 @@
 /*   By: hmimouni <hmimouni@>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/19 15:26:28 by hmimouni          #+#    #+#             */
-/*   Updated: 2026/01/23 16:53:14 by hmimouni         ###   ########.fr       */
+/*   Updated: 2026/01/24 15:10:12 by hmimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ Cure:: ~Cure()
 }
 Cure::Cure() : AMateria("cure")
 {
+	std::cout << "Parametized constructor Cure called \n";
 }
 
 Cure& Cure::operator=(const Cure &other)

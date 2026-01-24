@@ -6,7 +6,7 @@
 /*   By: hmimouni <hmimouni@>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/19 15:40:28 by hmimouni          #+#    #+#             */
-/*   Updated: 2026/01/23 15:25:55 by hmimouni         ###   ########.fr       */
+/*   Updated: 2026/01/24 15:10:56 by hmimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,11 @@
 
 Ice:: ~Ice()
 {
-	
+	std::cout << "Default destructor Ice caled \n";
 }
 Ice::Ice() : AMateria("ice")
 {
-
+	std::cout << "Parametized constructor Ice called \n";
 }
 
 Ice& Ice::operator=(const Ice &other)

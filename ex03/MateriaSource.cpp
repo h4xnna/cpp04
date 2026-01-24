@@ -6,7 +6,7 @@
 /*   By: hmimouni <hmimouni@>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/21 14:39:49 by hmimouni          #+#    #+#             */
-/*   Updated: 2026/01/24 13:20:09 by hmimouni         ###   ########.fr       */
+/*   Updated: 2026/01/24 15:12:01 by hmimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ MateriaSource::MateriaSource(): _count(0)
 }
 MateriaSource::MateriaSource(const MateriaSource& other) : _count(0)
 {
+	std::cout << "Copy constructor MateriaSource called\n";
 	int i = 0;
     while ( i < other._count)
     {
@@ -35,6 +36,7 @@ MateriaSource::MateriaSource(const MateriaSource& other) : _count(0)
 }
 MateriaSource& MateriaSource::operator=(const MateriaSource& other)
 {
+	std::cout << "Copy assignment operator MateriaSource called\n";
 	int i = 0;
     if (this != &other)
     {
@@ -69,10 +71,23 @@ MateriaSource::~MateriaSource()
 
 void MateriaSource::learnMateria(AMateria* m)
 {
-    if (!m || _count >= 4)
+    if (!m)
         return;
-    inventory[_count++] = m->clone();
+
+    int i = 0;
+    while (i < 4)
+    {
+        if (!inventory[i])
+        {
+            inventory[i] = m; 
+            _count++;
+            return;
+        }
+        i++;
+    }
+    delete m;
 }
+
 
 
 void MateriaSource::print_inventory()
@@ -93,10 +108,7 @@ AMateria* MateriaSource::createMateria(std::string const & type)
 	while(i < 4)
 	{
 		if(inventory[i] && inventory[i]->getType() == type)
-		{
 			return inventory[i]->clone();
-			
-		}
 		i++;
 	}
 	if(i >= 4)

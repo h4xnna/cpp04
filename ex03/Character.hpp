@@ -6,7 +6,7 @@
 /*   By: hmimouni <hmimouni@>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/19 16:50:46 by hmimouni          #+#    #+#             */
-/*   Updated: 2026/01/24 13:10:19 by hmimouni         ###   ########.fr       */
+/*   Updated: 2026/01/24 14:58:27 by hmimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ class Character : public ICharacter
     private:
 		AMateria * inventory[4];
         std::string _name;
+        AMateria* dropped[100]; 
+        int dropped_count;     
 
     public:
         Character(std::string const &name);
